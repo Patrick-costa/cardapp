@@ -1,0 +1,48 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-img src="../assets/img/cadastro.png"></ion-img>
+  <center>
+    <h3>
+      <br>Cardapp</h3>
+    <span class="login-cardapp">Cadastro</span>
+  </center>
+
+  <ion-list lines="none" style="width: 90%; margin: 0 auto">
+
+      <ion-item class="item-line">
+        <ion-input class="input-login" type="text" name="nome" placeholder="Nome" [(ngModel)]="userRegister.nome"></ion-input>
+      </ion-item>
+      <ion-item class="item-line">
+        <ion-input class="input-login" type="text" name="sobrenome" placeholder="Sobrenome" [(ngModel)]="userRegister.sobrenome"></ion-input>
+      </ion-item>
+      <ion-item class="item-line">
+        <ion-input class="input-login" type="text" name="cpf" placeholder="CPF" [(ngModel)]="userRegister.cpf"></ion-input>
+      </ion-item>
+      <ion-item class="item-line">
+        <ion-input class="input-login" type="text" name="telefone" placeholder="Telefone" [(ngModel)]="userRegister.telefone"></ion-input>
+      </ion-item>
+      <ion-item class="item-line">
+        <ion-input class="input-login" type="email" name="email" placeholder="E-mail" [(ngModel)]="userRegister.email"></ion-input>
+      </ion-item>
+      <ion-item class="item-line">
+        <ion-input class="input-login" type="text" name="senha" placeholder="Senha" [(ngModel)]="userRegister.senha"></ion-input>
+      </ion-item>
+      <ion-item class="item-line">
+        <ion-input class="input-login" type="text" placeholder="Confirmar Senha" [(ngModel)]="confirmarSenha"></ion-input>
+      </ion-item>
+      <center>
+        <ion-button class="buton" type="submit" (click)="cadastrar()">Cadastrar</ion-button>
+      </center>
+
+  </ion-list>
+
+  <br>
+  <br>
+</ion-content>

@@ -1,0 +1,70 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-img src="../assets/img/cadastro-cardapio.png"></ion-img>
+  <center>
+    <h3>
+      <br>Cardapp</h3>
+    <span class="login-cardapp">Cadastro do Cardapio</span>
+  </center>
+
+  <ion-list lines="none" style="width: 90%; margin: 0 auto">
+    <form>
+      <ion-item class="item-line">
+        <ion-select class="input-login" placeholder="Categoria" [(ngModel)]="cardapio.categoria">
+          <ion-select-option>Pizza</ion-select-option>
+          <ion-select-option>Hamburguer</ion-select-option>
+          <ion-select-option>Frutos do Mar</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="item-line">
+        <ion-input class="input-login" type="text" placeholder="Sabor" [(ngModel)]="cardapio.sabor"></ion-input>
+      </ion-item>
+      <ion-item class="item-line">
+        <ion-select class="input-login" placeholder="Loja" [(ngModel)]="cardapio.loja">
+          <ion-select-option *ngFor="let lojas of loja">{{ lojas.nomeFantasia }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="item-line">
+        <ion-input class="input-login" type="email" placeholder="Ingredientes" [(ngModel)]="cardapio.ingredientes"></ion-input>
+      </ion-item>
+      <ion-item class="item-line">
+        <ion-input class="input-login" type="text" placeholder="Tamanho 1" [(ngModel)]="cardapio.tamanho1"></ion-input>
+      </ion-item>
+      <ion-item class="item-line">
+        <ion-input class="input-login" type="text" placeholder="Preço 1" [(ngModel)]="cardapio.preco1"></ion-input>
+      </ion-item>
+      <ion-item class="item-line">
+        <ion-input class="input-login" type="text" placeholder="Tamanho 2" [(ngModel)]="cardapio.tamanho2"></ion-input>
+      </ion-item>
+      <ion-item class="item-line">
+        <ion-input class="input-login" type="text" placeholder="Preço 2" [(ngModel)]="cardapio.preco2"></ion-input>
+      </ion-item>
+      <ion-item class="item-line">
+        <ion-input class="input-login" type="text" placeholder="Tamanho 3" [(ngModel)]="cardapio.tamanho3"></ion-input>
+      </ion-item>
+      <ion-item class="item-line">
+        <ion-input class="input-login" type="text" placeholder="Preço 3" [(ngModel)]="cardapio.preco3"></ion-input>
+      </ion-item>
+      <center>
+        <ion-button class="buton" (click)="cadastrar()">Cadastrar</ion-button>
+      </center>
+    </form>
+  </ion-list>
+  <br>
+  <br>
+
+  <ion-item *ngFor="let loja of idLoja">
+    {{ loja.id }}
+  </ion-item>
+
+  <ion-item *ngFor="let lojas of loja">
+    {{ lojas.nomeFantasia }}
+  </ion-item>
+</ion-content>

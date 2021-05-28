@@ -1,0 +1,80 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-img src="../assets/img/cadastro-loja.png"></ion-img>
+  <center>
+    <h3>
+      <br>Cardapp</h3>
+    <span class="login-cardapp">Cadastro de loja</span>
+  </center>
+
+  <ion-list lines="none" style="width: 90%; margin: 0 auto">
+    <form #form>
+      <ion-item class="item-line">
+        <ion-input class="input-login" type="text" placeholder="CNPJ" [(ngModel)]="loja.cnpj"></ion-input>
+      </ion-item>
+      <ion-item class="item-line">
+        <ion-input class="input-login" type="text" placeholder="Razão Social" [(ngModel)]="loja.razaoSocial"></ion-input>
+      </ion-item>
+      <ion-item class="item-line">
+        <ion-input class="input-login" type="email" placeholder="Nome Fantasia" [(ngModel)]="loja.nomeFantasia"></ion-input>
+      </ion-item>
+      <ion-item class="item-line">
+        <ion-input class="input-login" type="text" placeholder="Inscrição Estadual" [(ngModel)]="loja.inscricaoEstadual"></ion-input>
+      </ion-item>
+      <ion-item class="item-line">
+        <ion-input class="input-login" type="text" placeholder="Telefone" [(ngModel)]="loja.telefone"></ion-input>
+      </ion-item>
+      <ion-item class="item-line">
+        <ion-input class="input-login" type="text" placeholder="CEP" id="cep" name="cep" required [(ngModel)]="loja.cep" (ionBlur)="consultaCEP($event.target.value);"></ion-input>
+      </ion-item>
+      <ion-item class="item-line">
+        <ion-input class="input-login" type="text" value='{{dados.logradouro}}' [(ngModel)]="loja.rua" required readonly name="rua"
+          placeholder="Rua" id="rua" ngModel></ion-input>
+      </ion-item>
+      <ion-item class="item-line">
+        <ion-input class="input-login" type="text" value='' [(ngModel)]="loja.numero" name="numero" required placeholder="Número"
+          id="numero">
+        </ion-input>
+      </ion-item>
+      <ion-item class="item-line">
+        <ion-input class="input-login" type="text" placeholder="Cidade" [(ngModel)]="loja.cidade" required readonly value='{{dados.localidade}}'
+          id="cidade"></ion-input>
+      </ion-item>
+      <ion-item class="item-line">
+        <ion-input class="input-login" type="text" placeholder="Bairro" [(ngModel)]="loja.bairro" required readonly value='{{dados.bairro}}'
+          id="bairro"></ion-input>
+      </ion-item>
+      <ion-item class="item-line">
+        <ion-input class="input-login" type="text" placeholder="Estado" [(ngModel)]="loja.estado" required readonly value='{{dados.uf}}'
+          id="uf">
+        </ion-input>
+      </ion-item>
+      <ion-item class="item-line">
+        <ion-input class="input-login" type="text" placeholder="Telefone Alternativo" [(ngModel)]="loja.telefoneAlternativo"></ion-input>
+      </ion-item>
+      <ion-item class="item-line">
+        <ion-select class="input-login" placeholder="Tipo de Comercio" [(ngModel)]="loja.tipo">
+          <ion-select-option>Pizzaria</ion-select-option>
+          <ion-select-option>Frutos do Mar</ion-select-option>
+          <ion-select-option>Bar</ion-select-option>
+          <ion-select-option>Fast-Food</ion-select-option>
+          <ion-select-option>Restaurante</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <center>
+        <ion-button class="buton" type="submit" (click)="saveLoja()">Cadastrar</ion-button>
+      </center>
+    </form>
+  </ion-list>
+  <br>
+  <br>
+</ion-content>

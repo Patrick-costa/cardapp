@@ -1,0 +1,87 @@
+.badge-not{
+    --background: #313C56;
+  }
+  
+  div.container-50{
+    width: 80px;
+    height: 70px;
+    background: #DFDFDF;
+    border-radius: 8px;
+  }
+  
+  .fab-color{
+    --background: #313C56;
+  }
+  
+  .fab-icon{
+    color: #ffff
+  }
+  
+  .router-link{
+    --color: #CFCDCD;
+  }
+  
+  .menu-item{
+    --color: #CFCDCD;
+  }
+  
+  ion-img{
+     
+      width: 45%;
+      margin: auto;
+  }
+
+  h3{
+      margin: auto;
+      font-weight: 600;
+  }
+
+  .login-cardapp{
+    color: #CFCDCD;
+  }
+
+  .input-login{
+      color: #666666;
+      height: 50px;
+      border: 1px solid #CFCDCD;
+      border-top: 0px;
+      border-right: 0px;
+      border-left: 0px;
+      margin-top: 30px;
+  }
+
+
+  .buton{
+      --background: #313C56;
+      color: #fff;
+      --border-radius: 40px;
+      width: 70%;
+      margin-top: 30px;
+  }
+
+  .rodape-text{
+      font-size: 13px;
+  }
+
+  .link-cad{
+      color: #313C56;
+  }
+
+  .input-login:hover{
+    border-color: #313C56;
+    color: #313C56;
+  }
+
+  .item-line:hover{
+    border-color: #313C56;
+    color: #313C56;
+  }
+  
+
+  ion-select{
+      width: 100%;
+  }
+
+  ion-select:hover{
+      --color: #313C56;
+  }

@@ -1,0 +1,43 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-img src="../assets/img/login.png"></ion-img>
+  <center>
+    <h3>
+      <br>Cardapp</h3>
+    <span class="login-cardapp">Login</span>
+  </center>
+
+  <ion-list lines="none" style="width: 90%; margin: 0 auto">
+    <form #form>
+      <ion-item>
+        <ion-input class="input-login" type="text" placeholder="E-mail" name="email" [(ngModel)]="userLogin.email" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input class="input-login" type="password" placeholder="Senha" name="senha" [(ngModel)]="userLogin.senha"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="esqueceu" slot="end" routerLink="/esqueci-senha">Esqueceu a senha ?</ion-label>
+      </ion-item>
+
+      <center>
+        <ion-button class="buton" type="submit" (click)="login()">Entrar</ion-button>
+      </center>
+    </form>
+  </ion-list>
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>
+      <span class="rodape-text">Não tem conta ?
+        <a class="link-cad" routerLink="/cadastro-user">Cadastre-se</a>
+      </span>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

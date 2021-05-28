@@ -1,0 +1,199 @@
+<!-- ########################## MENU ######################### -->
+
+
+<ion-menu side="start" content-id="main-content">
+  <ion-header class="ion-no-border">
+    <ion-toolbar translucent>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item lines="none" class="menu-item-2" routerLink="/principal">
+        <ion-icon class="menu-icon" name="home" slot="start"></ion-icon>
+        <ion-label class="router-link-2">Inicio</ion-label>
+      </ion-item>
+      <ion-item lines="none" class="menu-item" routerLink="/perfil">
+        <ion-icon class="menu-icon" name="person-circle-outline" slot="start"></ion-icon>
+        <ion-label class="router-link">Minha Conta</ion-label>
+      </ion-item>
+      <ion-item lines="none" class="menu-item" routerLink="/visualizar-loja">
+        <ion-icon class="menu-icon" name="storefront" slot="start"></ion-icon>
+        <ion-label class="router-link">Loja</ion-label>
+      </ion-item>
+      <ion-item lines="none" class="menu-item" routerLink="/cadastro-loja">
+        <ion-icon class="menu-icon" name="add" slot="start"></ion-icon>
+        <ion-label class="router-link">Cadastrar Loja</ion-label>
+      </ion-item>
+      <ion-item lines="none" class="menu-item" routerLink="/cadastrar-cardapio">
+        <ion-icon class="menu-icon" name="book" slot="start"></ion-icon>
+        <ion-label class="router-link">Cadastrar Cardapio</ion-label>
+      </ion-item>
+      <ion-item lines="none" class="menu-item" (click)="logout()">
+        <ion-icon class="menu-icon" name="log-in-outline" slot="start"></ion-icon>
+        <ion-label class="router-link">Logout</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+<!-- ############################## FIM DO MENU ############################### -->
+
+<div class="ion-page" id="main-content">
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-badge slot="end" class="badge-not">0</ion-badge>
+      <ion-icon name="notifications" size="large" slot="end"></ion-icon>
+      <ion-buttons slot="start">
+        <ion-menu-button color="dark"></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <h3 style="font-weight: 600;">&nbsp;&nbsp;Olá Visitante
+      <br>
+      <br>
+    </h3>
+    <ion-item lines="none">
+      <ion-label>Precisa pesquisar algo? Digite aqui</ion-label>
+    </ion-item>
+    <div class="search">
+      <ion-header translucent>
+        <ion-searchbar></ion-searchbar>
+      </ion-header>
+      <br>
+      <ion-segment mod="md" [(ngModel)]="segment" (ionChange)="segmentChanged($event)">
+        <ion-segment-button color="dark" value="0">
+          <ion-icon name="pizza" size="large"></ion-icon>
+        </ion-segment-button>
+
+        <ion-segment-button value="1">
+          <ion-icon name="fish" size="large"></ion-icon>
+        </ion-segment-button>
+
+        <ion-segment-button value="2">
+          <ion-icon name="fast-food" size="large"></ion-icon>
+        </ion-segment-button>
+
+        <ion-segment-button value="3">
+          <ion-icon name="beer" size="large"></ion-icon>
+        </ion-segment-button>
+
+        <ion-segment-button value="4">
+          <ion-icon name="restaurant" size="large"></ion-icon>
+        </ion-segment-button>
+
+      </ion-segment>
+
+    </div>
+
+    <ion-list>
+      <ion-slides #slides pager="false" [options]="sliderOptions" (ionSlideDidChange)="slideShange(slides)" (ionSlidesDidLoad)="slideShange(slides)">
+        <ion-slide>
+          <ion-card routerLink="/visualizar-cardapio" *ngFor='let dados of loja1'>
+            <ion-card-content>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="9" class="paragraph-card">
+                    <p class="paragraph1">{{ dados.nomeFantasia }}</p>
+                    <p class="paragraph2">{{ dados.rua }}, {{ dados.numero }} {{ dados.bairro }} - {{ dados.cidade}}/{{dados.estado}} </p>
+                    <p class="paragraph2">{{dados.telefone}} - {{dados.telefoneAlternativo}}</p>
+                  </ion-col>
+                  <ion-col size="3">
+                    <div class="container-50">
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+
+        <ion-slide>
+          <ion-card *ngFor='let dados of loja2'>
+            <ion-card-content>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="9" class="paragraph-card">
+                    <p class="paragraph1">{{ dados.nomeFantasia }}</p>
+                    <p class="paragraph2">{{ dados.rua }}, {{ dados.numero }} {{ dados.bairro }} - {{ dados.cidade}}/{{dados.estado}} </p>
+                    <p class="paragraph2">{{dados.telefone}} - {{dados.telefoneAlternativo}}</p>
+                  </ion-col>
+                  <ion-col size="3">
+                    <div class="container-50">
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+
+        <ion-slide>
+          <ion-card *ngFor='let dados of loja3'>
+            <ion-card-content>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="9" class="paragraph-card">
+                    <p class="paragraph1">{{ dados.nomeFantasia }}</p>
+                    <p class="paragraph2">{{ dados.rua }}, {{ dados.numero }} {{ dados.bairro }} - {{ dados.cidade}}/{{dados.estado}} </p>
+                    <p class="paragraph2">{{dados.telefone}} - {{dados.telefoneAlternativo}}</p>
+                  </ion-col>
+                  <ion-col size="3">
+                    <div class="container-50">
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+
+        <ion-slide>
+          <ion-card *ngFor='let dados of loja4'>
+            <ion-card-content>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="9" class="paragraph-card">
+                    <p class="paragraph1">{{ dados.nomeFantasia }}</p>
+                    <p class="paragraph2">{{ dados.rua }}, {{ dados.numero }} {{ dados.bairro }} - {{ dados.cidade}}/{{dados.estado}} </p>
+                    <p class="paragraph2">{{dados.telefone}} - {{dados.telefoneAlternativo}}</p>
+                  </ion-col>
+                  <ion-col size="3">
+                    <div class="container-50">
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+
+        <ion-slide>
+          <ion-card *ngFor='let dados of loja5'>
+            <ion-card-content>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="9" class="paragraph-card">
+                    <p class="paragraph1">{{ dados.nomeFantasia }}</p>
+                    <p class="paragraph2">{{ dados.rua }}, {{ dados.numero }} {{ dados.bairro }} - {{ dados.cidade}}/{{dados.estado}} </p>
+                    <p class="paragraph2">{{dados.telefone}} - {{dados.telefoneAlternativo}}</p>
+                  </ion-col>
+                  <ion-col size="3">
+                    <div class="container-50">
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+
+
+      </ion-slides>
+    </ion-list>
+
+    {{nome}}
+  </ion-content>
+</div>
